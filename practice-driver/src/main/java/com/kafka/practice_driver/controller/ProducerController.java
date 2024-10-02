@@ -15,10 +15,7 @@ public class ProducerController {
     @Autowired
     private PublisherService publisherService;
 
-    // Business Logic
-
-
-    @PutMapping(value = "location")
+    @PutMapping(value = "/location")
     public ResponseEntity updateLocation() throws InterruptedException {
 
         int range = 100;
@@ -33,8 +30,7 @@ public class ProducerController {
                 , HttpStatus.OK);
     }
 
-    @PostMapping(value = "message")
-    @RequestMapping(value = "/message")
+    @PostMapping(value = "/message")
     public ResponseEntity updateMessage(@RequestBody String message) throws InterruptedException {
 
         publisherService.updateMessage(message);
